@@ -17,7 +17,7 @@ The trajectory obtained from Colmap is used as the ground truth of the AUV motio
 Fig. 2 Application scenarios of Acoustic-VINS and sensors related to positioning and perception.
 
 ## 3. Dataset Details
-The dataset is released in the form of rosbag and currently there are 10 rosbags available:
+### The dataset is released in the form of rosbag and currently there are 10 rosbags available:
 
 | name | duration | size |
 | :--: | :------: | :--: |
@@ -33,21 +33,32 @@ The dataset is released in the form of rosbag and currently there are 10 rosbags
 | LBL_AQUALOC_sequence_10.bag | 11'54" | 8.5GB |
 
 
-The data items within the rosbag are listed below:
+### The data items within the rosbag are listed below:
 | topic | type | frequency | description |
 | :---: | :--: | :-------: | :---------: |
-| /cam0/image_raw | sensor_msgs/Image | 20Hz | right camera |
-| /cam1/image_raw | sensor_msgs/Image | 20Hz | left camera |
-| /imu0 | sensor_msgs/Imu | 200Hz | IMU |
-| /external_trigger | gvins/LocalSensorExternalTrigger | - | publish when VI-Sensor is trigger. 
-| /ublox_driver/receiver_lla | sensor_msgs/NavSatFix | 10Hz | Receiver's GNSS solution (brief). |
-| /ublox_driver/receiver_pvt | gnss_comm/GnssPVTSolnMsg | 10Hz | Receiver's GNSS solution (verbose). [definition](https://github.com/HKUST-Aerial-Robotics/gnss_comm/blob/main/msg/GnssPVTSolnMsg.msg) |
-| /ublox_driver/range_meas | gnss_comm/GnssMeasMsg | 10Hz | GNSS raw measurement. [definition](https://github.com/HKUST-Aerial-Robotics/gnss_comm/blob/main/msg/GnssMeasMsg.msg) | 
-| /ublox_driver/ephem | gnss_comm/GnssEphemMsg | - | The broadcast ephemeris of GPS, Galileo and BeiDou. [definition](https://github.com/HKUST-Aerial-Robotics/gnss_comm/blob/main/msg/GnssEphemMsg.msg) |
-| /ublox_driver/glo_ephem | gnss_comm/GnssGloEphemMsg | - | The broadcast ephemeris of GLONASS. [definition](https://github.com/HKUST-Aerial-Robotics/gnss_comm/blob/main/msg/GnssGloEphemMsg.msg) | 
-| /ublox_driver/iono_params | gnss_comm/StampedFloat64Array | - | The broadcast ionospheric parameters. [definition](https://github.com/HKUST-Aerial-Robotics/gnss_comm/blob/main/msg/StampedFloat64Array.msg) | 
-| /ublox_driver/time_pulse_info | gnss_comm/GnssTimePulseInfoMsg | 1Hz | The time information of next PPS signal. [definition](https://github.com/HKUST-Aerial-Robotics/gnss_comm/blob/main/msg/GnssTimePulseInfoMsg.msg).
+| /camera/image_raw | sensor_msgs/Image | 20Hz | monocular camera |
+| /camera/ueye_info | ueye_cam/UEyeInfo | 20Hz | camera info |
+| /rtimulib_node/imu | sensor_msgs/Imu | 200Hz | IMU |
+| /lbl_1 | lbl_data/LBLdata | 1Hz | #1 acoustic bouy measurements of LBL| 
+| /lbl_2 | lbl_data/LBLdata | 1Hz | #2 acoustic bouy measurements of LBL| 
+| /lbl_3 | lbl_data/LBLdata | 1Hz | #3 acoustic bouy measurements of LBL| 
+| /lbl_4 | lbl_data/LBLdata | 1Hz | #4 acoustic bouy measurements of LBL| 
+| /fix | sensor_msgs/NavSatFix | 1Hz | Trajectory with noise. |
+| /barometer_node/depth | sensor_msgs/FluidPressure | 60Hz |  PS height measurement|
+| /barometer_node/pressure | sensor_msgs/FluidPressure | 60Hz | PS raw measurement | 
+| /barometer_node/temperature | sensor_msgs/Temperature | 60Hz | Temperature |
+| /rtimulib_node/mag | sensor_msgs/MagneticField | 200Hz | MagneticField measurement | 
 
+### The massage format of LBLdata
+| **type** | **name** | 
+| :------: | :------: | 
+|std_msgs/Header |header|
+|float64 |bouy_id|
+|float64 |bouy_X|
+|float64 |bouy_Y|
+|float64 |bouy_Z|
+|float64 |arrival_time|
+|float64 |average_speed_of_sound|
 
 ## 4.Download link
 LBL-AQUALOC-Dataset download link: coming soon.
