@@ -61,5 +61,7 @@ Fig. 2 Application scenarios of Acoustic-VINS and sensors related to positioning
 |float64 |average_speed_of_sound|
 
 ## 4.Download link
-LBL-AQUALOC-Dataset download link: coming soon.
+LBL-AQUALOC-Dataset download link: https://pan.baidu.com/s/1Uz5xlJQKhGV_CyR72wzy5g
+Password：cpnt
+
 
