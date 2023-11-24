@@ -61,11 +61,27 @@ Fig. 2 Application scenarios of Acoustic-VINS and sensors related to positioning
 |float64 |average_speed_of_sound|
 
 ## 4.Related paper
+
+  When using this LBL-AQUALOC-Datasets in academic work, please consider citing:
+
+    @ARTICLE{10323517,
+      author={Song, Jiangbo and Li, Wanqing and Zhu, Xiangwei},
+      journal={IEEE Robotics and Automation Letters}, 
+      title={Acoustic-VINS: Tightly Coupled Acoustic-Visual-Inertial Navigation System for Autonomous Underwater Vehicles}, 
+      year={2023},
+      volume={},
+      number={},
+      pages={1-8},
+      doi={10.1109/LRA.2023.3334979}}
+
+Related paper:
+
 [1]	Jiangbo Song, Wanqing Li, Xiangwei Zhu, ect. Underwater adaptive height-constraint algorithm based on SINS/LBL tightly coupled [J]. IEEE Transactions on Instrumentation and Measurement, 2022, vol. 71, pp. 1-9. 
 
 [2]	Jiangbo Song, Wanqing Li, and Xiangwei Zhu. Acoustic-VINS: Tightly Coupled Acoustic-Visual-Inertial Navigation System for Autonomous Underwater Vehicles[J]. IEEE Robotics and Automation Letters. 2023
 
 [3] J. Song, W. Li, R. Liu, and X. Zhu, “FGO-ILNS: Tightly Coupled Multi-Sensor Integrated Navigation System Based on Factor Graph Optimization for Autonomous Underwater Vehicle,” arXiv e-prints, p. arXiv:2310.14163, Oct. 2023.
+
 
 ## 5.Download link
 LBL-AQUALOC-Dataset download link: https://pan.baidu.com/s/1Uz5xlJQKhGV_CyR72wzy5g
